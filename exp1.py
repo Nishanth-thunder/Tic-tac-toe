@@ -51,7 +51,7 @@ def playerMove():
             print('Please type a number!')
             
  
-def compMove():
+def compMove(board):
     possibleMoves = [x for x, letter in enumerate(board) if letter == ' ' and x != 0]
     move = 0
     count =0
@@ -115,7 +115,7 @@ def isBoardFull(board):
     else:
         return True
  
-def main():
+def run_game(board):
     print('Welcome to Tic Tac Toe!')
     printBoard(board)
  
@@ -128,7 +128,7 @@ def main():
             break
  
         if not(isWinner(board, 'X')):
-            move = compMove()
+            move = compMove(board)
             if move == 0:
                 print('Tie Game!')
             else:
@@ -142,11 +142,16 @@ def main():
     if isBoardFull(board):
         print('Tie Game!')
  
-while True:
-    answer = input('Do you want to play again? (Y/N)')
-    if answer.lower() == 'y' or answer.lower == 'yes':
+
+def main():
+    global board
+    while True:
         board = [' ' for x in range(10)]
         print('-----------------------------------')
-        main()
-    else:
-        break
+        run_game(board)
+        answer = input('Do you want to play again? (Y/N)')
+        if answer.lower() not in {'y', 'yes'}:
+            break
+
+if __name__ == "__main__":
+    main()
