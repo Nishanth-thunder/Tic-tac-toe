@@ -54,7 +54,23 @@ def playerMove():
 def compMove():
     possibleMoves = [x for x, letter in enumerate(board) if letter == ' ' and x != 0]
     move = 0
- 
+    count =0
+    place=0
+    for x in range (10):
+      if board[x]==' 'and x!=0:
+          count+=1
+    if count==8 :
+      for x in range(10):
+        if board[x]=='X'and x!=0:
+          if x==1 or x==3 or x==7 or x==9:
+            move=5
+          if x==5:
+            move =selectRandom([1,3,7,9])
+          if x==2 or x==4 or x==6 or x==8:
+            break
+          return move 
+    
+    
     for let in ['O', 'X']:
         for i in possibleMoves:
             boardCopy = board[:]
