@@ -11,17 +11,17 @@ def spaceIsFree(pos):
  
 # printBoard: function to print new board to the screen, param: board= the board itself.
 def printBoard(board):
-    print('   |   |')
-    print(' ' + board[1] + ' | ' + board[2] + ' | ' + board[3])
-    print('   |   |')
-    print('-----------')
-    print('   |   |')
-    print(' ' + board[4] + ' | ' + board[5] + ' | ' + board[6])
-    print('   |   |')
-    print('-----------')
-    print('   |   |')
-    print(' ' + board[7] + ' | ' + board[8] + ' | ' + board[9])
-    print('   |   |')
+    print('      |      |')
+    print(' ' + board[1] + '    | ' + board[2] + '    | ' + board[3])
+    print('      |      |')
+    print('--------------------')
+    print('      |      |')
+    print(' ' + board[4] + '    | ' + board[5] + '    | ' + board[6])
+    print('      |      |')
+    print('--------------------')
+    print('      |      |')
+    print(' ' + board[7] + '    | ' + board[8] + '    | ' + board[9])
+    print('      |      |')
 
 # isWinner: function to check that in board whether 'X' or 'O' sign completed in board, param: bo= 'X' or 'O' sign, le= 'X' or 'O' sign.    
 def isWinner(bo, le):
@@ -31,7 +31,7 @@ def isWinner(bo, le):
 def playerMove():
     run = True
     while run:
-        move = input('Please select a position to place an \'X\' (1-9): ')
+        move = input('==> Please select a position to place an \'X\' (1-9): ')
         try:
             move = int(move)
             if move > 0 and move < 10:
@@ -39,11 +39,11 @@ def playerMove():
                     run = False
                     insertLetter('X', move)
                 else:
-                    print('Sorry, this space is occupied!')
+                    print('==> Sorry, this space is occupied!')
             else:
-                print('Please type a number within the range!')
+                print('==> Please type a number within the range!')
         except:
-            print('Please type a number!')
+            print('==> Please type a number!')
             
 # compMove: function that will run if is computer turn that to place 'O' in board. 
 def compMove():
@@ -114,7 +114,7 @@ def isBoardFull(board):
 
 # Main Function: first function that will run in this game. the function will define the board, player 'O', and player 'X'.
 # the function also check whether the board full and player 'O' win, or the board full and player 'X' win, or the game tie.
-# and if the game is finished the program will ask the player "Do you want to play again? (Y/N)" and yes to play else to end the game. 
+# If the game is finished the program will ask the player "Do you want to play again? (Y/N)" and yes to play else to end the game. 
 def main():
     print('Welcome to Tic Tac Toe!')
     printBoard(board)
