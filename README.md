@@ -11,5 +11,4 @@ Tic tac toe project made in python to play in terminal.
  * CSS
  * HTML
 
-## Images 
-![Name of image](direct link to image)
+
