@@ -10,5 +10,6 @@ Tic tac toe project made in python to play in terminal.
  * Java Script
  * CSS
  * HTML
+ * C
 
 
