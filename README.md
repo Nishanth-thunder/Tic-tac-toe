@@ -1,7 +1,7 @@
 # TIC TAC TOE 
 
 ## Description
-Tic tac toe project made in python to play in terminal.
+> Tic tac toe project made in python to play in terminal.
 
 ## Languages used
  Python\
