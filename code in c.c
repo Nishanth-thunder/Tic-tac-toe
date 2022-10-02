@@ -1,22 +1,35 @@
 #include<stdio.h> 
 #include<stdlib.h>
+#include<string.h>
 int  CheckForWin();
 void Drawboard();
 void mark_board();
 void Rules();
 void score_board();
+void final();
 int t=1;
-char p1[100],p2[100];
+char p1[100],p2[100],temp[100];
 int s1=0,s2=0;
 char a[10]={'0','1','2','3','4','5','6','7','8','9'};
 int main()
 { 
+    system("color 3F");
     printf("\t\t\tTic-Tac-Toe\n\n\n");
     printf("\t\t\t----Player 1==X----\n\t\t\t----Player 2==O----\n\n\n");
     printf("\n\n\t\t ----NAME OF PLAYER 1 (____X____) ----\n\t\t ====> ");
     gets(p1);
     printf("\n\t\t ----NAME OF PLAYER 2 (____O____) ----\n\t\t ====> ");
     gets(p2);
+    char yes[7];
+    printf("==>  %s  ==  X\n==>  %s==  O\nDo you want to contiue with this or shall we exchange---- Press 'y' to change and 'n' to continue...",p1,p2);
+    scanf("%s",&yes);
+    if((yes[0]=='Y')||(yes[0]=='y'))
+    {
+     strcpy(temp,p1);
+     strcpy(p1,p2);
+     strcpy(p2,temp);	
+    
+	}
     printf("\n---- Do you want to know the RULES or need HELP?\n---- Press 'y' for yes and 'n' to continue...\n====> ");  
     char y[6];
     scanf("%s",&y);
@@ -30,14 +43,21 @@ int main()
 	Drawboard();
 	mark_board();
     CheckForWin();
-   }
-    printf("\n---- Do you want to see your scores\n---- Press 'y' for yes and 'n' to continue...\n====> ");   
+    final();
+  }
+    
+    if(s2-s1==2||s1-s2==2)
+    printf("\t\t\t\n\n\n---END---");
+    else
+	{
+	printf("\n---- Do you want to see your scores\n---- Press 'y' for yes and 'n' to continue...\n====> ");   
     scanf("%s",&y);
     if((y[0]=='Y')||(y[0]=='y'))
     {
      score_board();	
 	}
-    printf("\n---- Do you want to play again?\n---- Press 'y' for yes and 'n' to continue...\n====> ");   
+
+	printf("\n---- Do you want to play again?\n---- Press 'y' for yes and 'n' to continue...\n====> ");   
     scanf("%s",&y);
     if((y[0]=='Y')||(y[0]=='y'))
     {
@@ -50,6 +70,7 @@ int main()
 	 t++;	
 	}
     goto replay;
+}
 }
 }
 
@@ -147,4 +168,15 @@ void score_board()
 	printf("\n\t\t\t -----SCORES-----");
 	printf("\n\t\t\t%s's score is %d\n",p1,s1);
 	printf("\n\n\t\t\t%s's score is %d\n",p2,s2);
+	
+}
+void final()
+{
+	if (s1-s2==2||s2-s1==2)
+	{
+	if(s1>s2)
+	printf("\n---Congratulations!!!! hey %s well done, wowww you WON",p1);
+	if(s2>s1)
+	printf("\n---tCongratulations!!!! %s well done, wowww you WON",p2);	
+	}
 }
