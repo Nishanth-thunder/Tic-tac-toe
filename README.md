@@ -1,5 +1,15 @@
-# TIC TAC TOE Terminal python
+## Description
+Tic tac toe project made in python to play in terminal.
 
-tic tac toe project made in python to play in terminal
+## Implementation
 
-> no Liberaries required to play, just copy the code in any pthon ide and run
+> No Liberaries required to play, just copy the code in any pthon ide and run.
+
+## Languages used
+ * Python
+ * Java Script
+ * CSS
+ * HTML
+ * C
+
+
